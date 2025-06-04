@@ -1,0 +1,12 @@
+# Pinecone configuration
+PINECONE_API_KEY = "your-pinecone-api-key"
+PINECONE_INDEX = "your-pinecone-index"
+
+# Groq configuration
+GROQ_API_KEY = "your-groq-api-key"
+GROQ_MODEL = "llama3-70b-8192"
+
+# Search configuration
+DEFAULT_ALPHA = 0.5
+DEFAULT_FUSION_METHOD = "rrf"  # Options: "weighted", "rrf", "combmnz"
+EMBEDDING_MODEL = "BAAI/bge-large-en-v1.5" 

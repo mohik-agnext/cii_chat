@@ -1,0 +1,1 @@
+web: gunicorn -k gevent -w 1 hybrid_search_server_fixed:app 

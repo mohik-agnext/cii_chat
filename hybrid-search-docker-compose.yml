@@ -1,0 +1,8 @@
+services:
+  hybrid-search:
+    build: .
+    ports:
+      - "8080:3001"
+    environment:
+      - PORT=3001
+    restart: always 
