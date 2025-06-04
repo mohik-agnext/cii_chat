@@ -14,125 +14,58 @@
             padding: 0;
             background-color: #f9fafb;
             color: #1f2937;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
         }
         
         header {
             background-color: #ffffff;
-            padding: 0.75rem 1.5rem;
             border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            position: relative;
-            z-index: 10;
-        }
-        
-        h1 {
-            font-size: 1.25rem;
-            margin: 0;
-            color: #6366f1;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* Add proper styling for markdown headings */
-        .bot-message h1 {
-            font-size: 1.5rem;
-            margin: 0.5rem 0;
-            color: #111827;
-            font-weight: 700;
-            display: block;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 0.25rem;
-        }
-        
-        .bot-message h2 {
-            font-size: 1.25rem;
-            margin: 0.5rem 0;
-            color: #111827;
-            font-weight: 600;
-            display: block;
-        }
-        
-        .bot-message h3 {
-            font-size: 1.1rem;
-            margin: 0.5rem 0;
-            color: #111827;
-            font-weight: 600;
-            display: block;
-        }
-        
-        .logo {
-            width: 30px;
-            height: 30px;
-            background-color: #6366f1;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        
-        .header-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
         }
         
         .chat-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            height: calc(100vh - 180px);
             position: relative;
-            background-color: #f9fafb;
         }
         
         .chat-messages {
-            flex: 1;
+            height: 100%;
             overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            padding-bottom: 5rem;
+            padding: 1rem;
         }
         
         .message {
+            margin-bottom: 1.5rem;
             position: relative;
             max-width: 80%;
             padding: 1rem;
-            border-radius: 1rem;
+            border-radius: 0.75rem;
             line-height: 1.5;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         
         .user-message {
             background-color: #6366f1;
             color: white;
             margin-left: auto;
-            border-radius: 1rem 1rem 0 1rem;
+            border-radius: 0.75rem 0.75rem 0 0.75rem;
         }
         
         .bot-message {
-            background-color: white;
+            background-color: #f3f4f6;
             margin-right: auto;
-            border-radius: 1rem 1rem 1rem 0;
+            border-radius: 0.75rem 0.75rem 0.75rem 0;
         }
         
         .error-message {
             background-color: #fee2e2;
             color: #b91c1c;
             margin-right: auto;
-            border-radius: 1rem;
+            border-radius: 0.75rem;
         }
         
         .input-container {
@@ -140,29 +73,25 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 1rem;
+            padding: 1rem 2rem;
             background-color: #ffffff;
             border-top: 1px solid #e5e7eb;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.03);
         }
         
         .input-wrapper {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            display: flex;
-            align-items: center;
         }
         
         input[type="text"] {
             width: 100%;
             padding: 0.75rem 1rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 1.5rem;
-            font-size: 0.95rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
             outline: none;
-            transition: all 0.2s;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: border-color 0.2s;
         }
         
         input[type="text"]:focus {
@@ -170,27 +99,22 @@
             box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
         }
         
-        button#sendButton {
+        button {
             position: absolute;
             right: 0.5rem;
             top: 50%;
             transform: translateY(-50%);
-            background-color: #6366f1;
+            background-color: transparent;
             border: none;
-            color: white;
+            color: #6366f1;
             cursor: pointer;
             padding: 0.5rem;
             border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             transition: background-color 0.2s;
         }
         
-        button#sendButton:hover {
-            background-color: #4f46e5;
+        button:hover {
+            background-color: #eef2ff;
         }
         
         .send-icon {
@@ -199,184 +123,10 @@
         }
         
         /* Add your other styles as needed */
-        
-        /* Welcome message styling */
-        .welcome-message {
-            text-align: center;
-            padding: 3rem 2rem;
-            max-width: 700px;
-            margin: 3rem auto;
-            background-color: white;
-            border-radius: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .welcome-message h2 {
-            color: #6366f1;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .welcome-message p {
-            color: #4b5563;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        .welcome-message.hidden {
-            display: none;
-        }
-        
-        .suggestions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-        
-        .suggestion-btn {
-            background-color: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.75rem;
-            padding: 0.75rem 1rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            position: relative;
-            transform: none;
-            text-align: left;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        }
-        
-        .suggestion-btn:hover {
-            background-color: #f9fafb;
-            border-color: #d1d5db;
-        }
-        
-        /* Session info styling */
-        .session-info {
-            font-size: 0.8rem;
-            color: #6b7280;
-            margin-right: 1rem;
-            background-color: #f3f4f6;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-        }
-        
-        .new-chat-btn {
-            background-color: #6366f1;
-            color: white;
-            border: none;
-            border-radius: 1rem;
-            padding: 0.4rem 0.9rem;
-            font-size: 0.85rem;
-            cursor: pointer;
-            position: relative;
-            transform: none;
-            font-weight: 500;
-            transition: background-color 0.2s;
-        }
-        
-        .new-chat-btn:hover {
-            background-color: #4f46e5;
-        }
-        
-        /* Timestamp styling */
-        .timestamp {
-            font-size: 0.75rem;
-            color: #9ca3af;
-            margin-top: 0.25rem;
-            text-align: right;
-        }
-        
-        /* Policy document response styling */
-        .formatted-response {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            background-color: white;
-            border-radius: 0.75rem;
-            overflow: hidden;
-        }
-        
-        .response-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #4f46e5;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 0.75rem 0.5rem 0.75rem 0;
-            text-align: left;
-        }
-        
-        .policy-section {
-            margin-bottom: 1.25rem;
-            padding: 0 0.25rem;
-        }
-        
-        .section-header {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #111827;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.25rem;
-        }
-        
-        .section-label {
-            font-weight: 600;
-            color: #4f46e5;
-        }
-        
-        .policy-paragraph {
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-            color: #374151;
-        }
-        
-        .policy-item {
-            display: flex;
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-            padding: 0.25rem 0;
-        }
-        
-        .item-label {
-            font-weight: 600;
-            color: #374151;
-            margin-right: 0.5rem;
-            min-width: 120px;
-        }
-        
-        .item-value {
-            color: #1f2937;
-        }
-        
-        .policy-list {
-            margin: 0.5rem 0 1rem 0.5rem;
-            padding-left: 1rem;
-            list-style-type: none;
-        }
-        
-        .policy-list li {
-            margin-bottom: 0.75rem;
-            position: relative;
-            padding-left: 1.25rem;
-            line-height: 1.5;
-        }
-        
-        .policy-list li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #4f46e5;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">C</div>
         <h1>Cii Chat</h1>
         <div class="header-controls">
             <span id="sessionInfo" class="session-info">Session: New conversation</span>
@@ -403,13 +153,13 @@
     <div class="input-container">
         <div class="input-wrapper">
             <input type="text" id="userInput" placeholder="Ask about Chandigarh policies..." autocomplete="off">
+        </div>
         <button id="sendButton">
             <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
             </svg>
         </button>
-        </div>
     </div>
     
     <script>
@@ -470,11 +220,11 @@
                 try {
                     logDebug('UI', `Adding message with role: ${role}`, { content, messageId });
                     
-                // Hide welcome message once chat starts
-                welcomeMessage.classList.add('hidden');
-                
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('message');
+                    // Hide welcome message once chat starts
+                    welcomeMessage.classList.add('hidden');
+                    
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message');
                     
                     // Set message class based on role
                     if (role === 'user') {
@@ -495,16 +245,16 @@
                     contentDiv.classList.add('message-content');
                     contentDiv.innerHTML = content;
                     messageDiv.appendChild(contentDiv);
-                
-                // Add timestamp
-                const timestamp = document.createElement('span');
-                timestamp.classList.add('timestamp');
-                timestamp.textContent = formatTimestamp();
-                messageDiv.appendChild(timestamp);
+                    
+                    // Add timestamp
+                    const timestamp = document.createElement('span');
+                    timestamp.classList.add('timestamp');
+                    timestamp.textContent = formatTimestamp();
+                    messageDiv.appendChild(timestamp);
                     
                     // Add to chat container
-                chatMessages.appendChild(messageDiv);
-                
+                    chatMessages.appendChild(messageDiv);
+                    
                     // Scroll to bottom
                     scrollToBottom();
                     
@@ -517,7 +267,7 @@
             
             // Function to scroll to the bottom of the chat
             function scrollToBottom() {
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                chatMessages.scrollTop = chatMessages.scrollHeight;
             }
             
             // Function to format search results as a table
@@ -529,190 +279,49 @@
                 </div>`;
             }
             
-            // Function to convert markdown to HTML with improved policy document formatting
+            // Function to convert markdown to HTML
             function markdownToHTML(markdown) {
                 if (!markdown) return '';
                 
-                // Extract the first line as a potential title
-                const lines = markdown.split('\n');
-                let title = '';
-                let content = markdown;
-                
-                // Process markdown headings first (##, ###, etc.)
-                content = content
+                // Replace headers
+                let html = markdown
                     .replace(/^### (.*$)/gim, '<h3>$1</h3>')
                     .replace(/^## (.*$)/gim, '<h2>$1</h2>')
                     .replace(/^# (.*$)/gim, '<h1>$1</h1>');
                 
-                // Check if the first line looks like a title (no punctuation at the end)
-                if (lines.length > 0 && lines[0].trim() && !lines[0].trim().match(/[.,:;?!]$/)) {
-                    title = lines[0].trim();
-                    // Remove markdown heading syntax if present
-                    title = title.replace(/^#+\s+/, '');
-                    content = lines.slice(1).join('\n').trim();
-                }
+                // Replace links
+                html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" target="_blank" rel="noopener">$1</a>');
                 
-                // Create a container for the formatted response
-                let html = '<div class="formatted-response">';
+                // Replace bold and italic
+                html = html
+                    .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/gim, '<em>$1</em>');
                 
-                // Add the title if present
-                if (title) {
-                    html += `<div class="response-title">${title}</div>`;
-                }
+                // Replace lists
+                html = html
+                    .replace(/^\s*\n\+\s(.*)/gim, '<ul><li>$1</li></ul>')
+                    .replace(/^\s*\n-\s(.*)/gim, '<ul><li>$1</li></ul>')
+                    .replace(/^\s*\n\d+\.\s(.*)/gim, '<ol><li>$1</li></ol>');
                 
-                // Process the content
-                let processedContent = content;
+                // Replace multiple list items
+                html = html
+                    .replace(/<\/ul>\s*<ul>/gim, '')
+                    .replace(/<\/ol>\s*<ol>/gim, '');
                 
-                // First, identify and extract potential policy sections
-                const sections = [];
-                let currentSection = { title: '', content: [] };
-                let inSection = false;
+                // Replace code blocks
+                html = html.replace(/```([\s\S]*?)```/gim, '<pre><code>$1</code></pre>');
                 
-                // Pre-process content to handle asterisks for bold text
-                processedContent = processedContent
-                    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                    .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-                    .replace(/\*\*SEZ Policy of Chandigarh Administration\*\*/g, '<strong>SEZ Policy of Chandigarh Administration</strong>');
+                // Replace inline code
+                html = html.replace(/`([^`]+)`/gim, '<code>$1</code>');
                 
-                // Process line by line to identify sections
-                const contentLines = processedContent.split('\n');
-                for (let i = 0; i < contentLines.length; i++) {
-                    const line = contentLines[i].trim();
-                    
-                    // Check if this is a section header (starts with "According to" or has a colon at the end)
-                    if (line.startsWith('According to') || 
-                        (line.match(/^[A-Za-z\s]+:$/) && !line.includes(' - ')) || 
-                        line.match(/^[A-Za-z\s]+ Category:/) ||
-                        line.match(/^Vehicle Category:/) ||
-                        line.match(/^Number Of/) ||
-                        line.match(/^Incentive Structure:/)) {
-                        
-                        // If we were in a section, save it
-                        if (inSection && currentSection.content.length > 0) {
-                            sections.push(Object.assign({}, currentSection));
-                        }
-                        
-                        // Start a new section
-                        currentSection = { 
-                            title: line, 
-                            content: [],
-                            isList: false
-                        };
-                        inSection = true;
-                    } 
-                    // Check if this is a list item (starts with bullet or number or double asterisk)
-                    else if (line.match(/^[\s]*[-•*+]\s+/) || line.match(/^[\s]*\d+\.\s+/) || line.match(/^\s*\*\*[A-Za-z]+\*\*:/) || line.match(/^\s*<strong>[A-Za-z]+<\/strong>:/)) {
-                        if (inSection) {
-                            currentSection.isList = true;
-                            currentSection.content.push(line);
-                        }
-                    }
-                    // Check if this is a key-value pair (contains a colon in the middle)
-                    else if (line.includes(':') && !line.endsWith(':')) {
-                        const parts = line.split(':');
-                        if (parts.length >= 2 && parts[0].trim().length > 0) {
-                            if (inSection) {
-                                currentSection.content.push({
-                                    key: parts[0].trim(),
-                                    value: parts.slice(1).join(':').trim()
-                                });
-                            }
-                        } else {
-                            if (inSection) currentSection.content.push(line);
-                        }
-                    }
-                    // Regular content
-                    else if (line.trim()) {
-                        if (inSection) {
-                            currentSection.content.push(line);
-                        }
-                    }
-                }
+                // Replace paragraphs
+                html = html.replace(/^\s*(\n)?(.+)/gim, function(m) {
+                    return /\<(\/)?(h\d|ul|ol|li|blockquote|pre|img)/.test(m) ? m : '<p>' + m + '</p>';
+                });
                 
-                // Add the last section if there is one
-                if (inSection && currentSection.content.length > 0) {
-                    sections.push(Object.assign({}, currentSection));
-                }
+                // Replace line breaks
+                html = html.replace(/\n/gim, '<br>');
                 
-                // Now format each section
-                for (const section of sections) {
-                    html += `<div class="policy-section">`;
-                    
-                    // Format the section title
-                    if (section.title) {
-                        if (section.title.includes(':')) {
-                            const titleParts = section.title.split(':');
-                            html += `<div class="section-header"><span class="section-label">${titleParts[0]}</span>${titleParts.length > 1 ? ':' + titleParts.slice(1).join(':') : ''}</div>`;
-                        } else {
-                            html += `<div class="section-header">${section.title}</div>`;
-                        }
-                    }
-                    
-                    // Format the section content
-                    if (section.isList) {
-                        html += `<ul class="policy-list">`;
-                        for (const item of section.content) {
-                            // Clean the item by removing list markers but preserving the bold formatting
-                            let cleanItem = item
-                                .replace(/^[\s]*[-•*+]\s+/, '')
-                                .replace(/^[\s]*\d+\.\s+/, '')
-                                .replace(/^\s*\*\*([A-Za-z]+)\*\*:/, '<strong>$1</strong>:');
-                            
-                            html += `<li>${cleanItem}</li>`;
-                        }
-                        html += `</ul>`;
-                        } else {
-                        for (const item of section.content) {
-                            if (typeof item === 'object' && item.key && item.value) {
-                                html += `<div class="policy-item"><span class="item-label">${item.key}:</span> <span class="item-value">${item.value}</span></div>`;
-                            } else if (typeof item === 'string') {
-                                if (item.includes(':') && !item.endsWith(':')) {
-                                    const parts = item.split(':');
-                                    html += `<div class="policy-item"><span class="item-label">${parts[0].trim()}:</span> <span class="item-value">${parts.slice(1).join(':').trim()}</span></div>`;
-                                } else {
-                                    html += `<div class="policy-paragraph">${item}</div>`;
-                                }
-                            }
-                        }
-                    }
-                    
-                    html += `</div>`;
-                }
-                
-                // If no sections were found, format the content as a regular paragraph
-                if (sections.length === 0) {
-                    // Replace links
-                    processedContent = processedContent.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, 
-                        '<a href="$2" target="_blank" rel="noopener">$1</a>');
-                    
-                    // Replace bold and italic
-                    processedContent = processedContent
-                        .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-                        .replace(/\*(.*?)\*/gim, '<em>$1</em>');
-                    
-                    // Process lists
-                    const listItems = processedContent.split('\n').filter(line => 
-                        line.trim().match(/^[\s]*[-•*+]\s+/) || line.trim().match(/^[\s]*\d+\.\s+/));
-                    
-                    if (listItems.length > 0) {
-                        html += '<ul class="policy-list">';
-                        for (const item of listItems) {
-                            const cleanItem = item.replace(/^[\s]*[-•*+]\s+/, '').replace(/^[\s]*\d+\.\s+/, '');
-                            html += `<li>${cleanItem}</li>`;
-                        }
-                        html += '</ul>';
-                    } else {
-                        // Split into paragraphs
-                        const paragraphs = processedContent.split('\n\n');
-                        for (const para of paragraphs) {
-                            if (para.trim()) {
-                                html += `<div class="policy-paragraph">${para}</div>`;
-                            }
-                        }
-                    }
-                }
-                
-                html += '</div>'; // Close the formatted-response container
                 return html;
             }
             
@@ -789,19 +398,19 @@
                     // Verify session ID is being sent correctly
                     if (!requestParams.session_id) {
                         logDebug('SESSION', 'WARNING: No session ID in request parameters');
-            } else {
+                    } else {
                         logDebug('SESSION', `Using session ID for fetch request: ${requestParams.session_id}`);
                     }
                     
                     const response = await fetch('http://localhost:8080/api/search', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
                         body: JSON.stringify(requestParams)
                     });
                     
-                if (!response.ok) {
+                    if (!response.ok) {
                         logDebug('FETCH', `Error response from server: ${response.status}`);
                         throw new Error(`Server returned ${response.status}: ${response.statusText}`);
                     }
@@ -836,18 +445,28 @@
                 }
             }
             
-            // Function to simulate a streaming response with client-side typing effect
+            // Function to stream responses from the server
             async function streamResponse(params) {
                 try {
-                    logDebug('FETCH', 'Starting simulated streaming response', params);
+                    logDebug('STREAM', 'Starting streaming response', params);
                     
-                    // Create a message container with loading indicator
+                    // Ensure we're requesting an LLM-generated response with conversation history
+                    const requestParams = {
+                        query: params.query,
+                        session_id: params.session_id,
+                        generate_response: true,
+                        include_history: true
+                    };
+                    
+                    logDebug('STREAM', 'Prepared request parameters', requestParams);
+                    
+                    // Create a message container for the streaming response
                     const messageId = `msg-${Date.now()}`;
-                    const messageElement = addMessage('assistant', '<div class="typing-indicator">Thinking...</div>', messageId);
+                    const messageElement = addMessage('assistant', '', messageId);
                     
                     // Verify the message element was created
                     if (!messageElement) {
-                        throw new Error('Failed to create message element');
+                        throw new Error('Failed to create message element for streaming response');
                     }
                     
                     // Find the content container within the message element
@@ -856,112 +475,131 @@
                         throw new Error('Message content container not found');
                     }
                     
-                    // Prepare request parameters
-                    const requestParams = {
-                        query: params.query,
-                        session_id: params.session_id,
-                        generate_response: true,
-                        include_history: true
-                    };
+                    logDebug('STREAM', 'Created message element for streaming response', { messageId });
                     
-                    logDebug('FETCH', 'Prepared request parameters', requestParams);
+                    // Debug the session ID being used
+                    logDebug('SESSION', `Using session ID for stream request: ${requestParams.session_id}`);
                     
-                    // Make a regular fetch request to the non-streaming endpoint
-                    const response = await fetch('http://localhost:8080/api/search', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                        body: JSON.stringify(requestParams)
+                    // Verify session ID is stored in localStorage
+                    const storedSessionId = localStorage.getItem('cii_chat_session_id');
+                    logDebug('SESSION', `Current session ID in localStorage: ${storedSessionId}`);
+                    if (storedSessionId !== requestParams.session_id) {
+                        logDebug('SESSION', 'WARNING: Session ID mismatch between request and localStorage', {
+                            requestSessionId: requestParams.session_id,
+                            storedSessionId: storedSessionId
+                        });
+                    }
+                    
+                    // Create URL parameters ensuring include_history is properly passed as a string
+                    const urlParams = new URLSearchParams({
+                        query: requestParams.query,
+                        session_id: requestParams.session_id,
+                        generate_response: 'true',
+                        include_history: 'true'
                     });
                     
-                    if (!response.ok) {
-                        logDebug('FETCH', `Error response from server: ${response.status}`);
-                        throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+                    const streamUrl = `http://localhost:8080/api/search/stream?${urlParams.toString()}`;
+                    logDebug('STREAM', `Creating EventSource with URL: ${streamUrl}`);
+                    
+                    let eventSource;
+                    try {
+                        eventSource = new EventSource(streamUrl);
+                        logDebug('STREAM', 'EventSource created successfully');
+                    } catch (connectionError) {
+                        logDebug('ERROR', 'Failed to create EventSource', {
+                            message: connectionError.message,
+                            url: streamUrl
+                        });
+                        throw new Error(`Failed to connect to streaming endpoint: ${connectionError.message}`);
                     }
                     
-                    const data = await response.json();
-                    logDebug('FETCH', 'Received response', data);
+                    let fullResponse = '';
+                    let receivedMetadata = false;
+                    let chunkCount = 0;
                     
-                    // Save session ID if present
-                    if (data.session_id) {
-                        logDebug('SESSION', `Received session ID from server: ${data.session_id}`);
-                        localStorage.setItem('cii_chat_session_id', data.session_id);
-                        // Update the session info display
-                        const sessionInfoElement = document.getElementById('sessionInfo');
-                        if (sessionInfoElement) {
-                            sessionInfoElement.textContent = `Session: ${data.session_id.substring(0, 8)}...`;
+                    eventSource.onmessage = (event) => {
+                        try {
+                            logDebug('STREAM', `Received event data: ${event.data.substring(0, 100)}...`);
+                            const data = JSON.parse(event.data);
+                            
+                            if (data.type === 'chunk') {
+                                chunkCount++;
+                                fullResponse += data.content;
+                                logDebug('STREAM', `Received chunk #${chunkCount}, content length: ${data.content.length}`);
+                                
+                                // Update the content container with the formatted markdown
+                                contentContainer.innerHTML = markdownToHTML(fullResponse);
+                                scrollToBottom();
+                            } 
+                            else if (data.type === 'metadata') {
+                                receivedMetadata = true;
+                                logDebug('STREAM', 'Received metadata', data);
+                                
+                                // Save session ID if present
+                                if (data.session_id) {
+                                    logDebug('SESSION', `Received session ID from server: ${data.session_id}`);
+                                    
+                                    // Check if this is different from our current session ID
+                                    const currentSessionId = localStorage.getItem('cii_chat_session_id');
+                                    if (currentSessionId !== data.session_id) {
+                                        logDebug('SESSION', `Session ID changed: ${currentSessionId} -> ${data.session_id}`);
+                                    }
+                                    
+                                    localStorage.setItem('cii_chat_session_id', data.session_id);
+                                    // Update the session info display if element exists
+                                    const sessionInfoElement = document.getElementById('sessionInfo');
+                                    if (sessionInfoElement) {
+                                        sessionInfoElement.textContent = `Session: ${data.session_id.substring(0, 8)}...`;
+                                    }
+                                } else {
+                                    logDebug('SESSION', 'WARNING: No session ID in metadata');
+                                }
+                            }
+                            else if (data.type === 'search_results') {
+                                logDebug('STREAM', `Received ${data.results?.length || 0} search results`);
+                            }
+                            else if (data.type === 'error') {
+                                logDebug('STREAM', 'Received error', data.error);
+                                contentContainer.innerHTML = `<div class="error-message">Error: ${data.error}</div>`;
+                                eventSource.close();
+                            }
+                            else if (data.type === 'done') {
+                                logDebug('STREAM', `Stream completed. Total chunks: ${chunkCount}, Full response length: ${fullResponse.length}`);
+                                logDebug('STREAM', `Response preview: ${fullResponse.substring(0, 100)}...`);
+                                eventSource.close();
+                                
+                                // Check if we received metadata (which should include session ID)
+                                if (!receivedMetadata) {
+                                    logDebug('SESSION', 'WARNING: No metadata received during stream');
+                                }
+                            }
+                        } catch (error) {
+                            logDebug('STREAM', 'Error processing stream message', error);
+                            contentContainer.innerHTML += '<div class="error-message">Error processing response. Please try again.</div>';
+                            eventSource.close();
                         }
-                    }
+                    };
                     
-                    // Extract the response text
-                    let responseText = '';
-                    
-                    // Log the full response data for debugging
-                    logDebug('RESPONSE', 'Full response data from server', data);
-                    
-                    if (data.llm_response) {
-                        // Use the LLM-generated response if available
-                        responseText = data.llm_response;
-                        logDebug('RESPONSE', 'Using LLM response', { length: responseText.length });
-                    } else if (data.response) {
-                        // Backward compatibility for 'response' field
-                        responseText = data.response;
-                        logDebug('RESPONSE', 'Using response field', { length: responseText.length });
-                    } else if (data.results && data.results.length > 0) {
-                        // If we have search results but no LLM response, format the results
-                        const resultsList = data.results.map(r => `- ${r.title || r.document_id}: ${r.content.substring(0, 100)}...`).join('\n');
-                        responseText = `I found ${data.results.length} relevant documents:\n\n${resultsList}`;
-                        logDebug('RESPONSE', 'Formatted search results', { count: data.results.length });
-                    } else {
-                        responseText = 'I couldn\'t find any relevant information for your query. Please try rephrasing your question.';
-                        logDebug('RESPONSE', 'No results or response found');
-                    }
-                    
-                    // Simulate typing effect with the response
-                    simulateTypingEffect(contentContainer, responseText);
+                    eventSource.onerror = (error) => {
+                        logDebug('STREAM', 'EventSource error', error);
+                        contentContainer.innerHTML += '<div class="error-message">Connection error. Please try again.</div>';
+                        eventSource.close();
+                    };
                     
                 } catch (error) {
                     console.error('Error in streamResponse:', error);
-                    logDebug('ERROR', 'Error in streamResponse', {
+                    
+                    // Enhanced error logging with more details
+                    logDebug('ERROR', 'Detailed error in streamResponse', {
                         message: error.message,
-                        stack: error.stack
+                        stack: error.stack,
+                        name: error.name,
+                        params: JSON.stringify(params),
+                        toString: error.toString()
                     });
+                    
                     addMessage('error', `Error: ${error.message}`);
                 }
-            }
-            
-            // Function to simulate typing effect
-            function simulateTypingEffect(container, text) {
-                // Clear any loading indicators
-                container.innerHTML = '';
-                
-                // For very long responses, use a faster typing approach
-                const isLongResponse = text.length > 500;
-                const chunkSize = isLongResponse ? 5 : 1; // Use larger chunks for long responses
-                const typingSpeed = isLongResponse ? 20 : 50; // Type faster for long responses
-                
-                const words = text.split(' ');
-                let currentText = '';
-                let wordIndex = 0;
-                
-                // Display words incrementally
-                const typingInterval = setInterval(() => {
-                    if (wordIndex < words.length) {
-                        // Add multiple words at once for long responses
-                        for (let i = 0; i < chunkSize && wordIndex < words.length; i++) {
-                            currentText += words[wordIndex] + ' ';
-                            wordIndex++;
-                        }
-                        container.innerHTML = markdownToHTML(currentText);
-                        scrollToBottom();
-                    } else {
-                        clearInterval(typingInterval);
-                        // Final render to ensure all formatting is applied correctly
-                        container.innerHTML = markdownToHTML(text);
-                        scrollToBottom();
-                    }
-                }, typingSpeed); // Adjust speed based on response length
             }
             
             // Function to generate a random session ID
