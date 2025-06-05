@@ -1,14 +1,14 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS",
-    "buildCommand": "echo 'Building application...'"
+    "builder": "DOCKERFILE",
+    "buildCommand": "echo 'Using Dockerfile for build...'\"
   },
   "deploy": {
-    "startCommand": "python hybrid_search_server_fixed.py",
-    "healthcheckPath": "/",
+    "startCommand": "gunicorn -k gevent -w 1 --bind 0.0.0.0:$PORT simple_server:app",
+    "healthcheckPath": "/api/greeting",
     "healthcheckTimeout": 300,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
-} 
+}

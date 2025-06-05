@@ -2,18 +2,17 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-# Install Flask
-RUN pip install --no-cache-dir flask flask-cors
+# Install required packages
+RUN pip install --no-cache-dir flask flask-cors gunicorn gevent requests
 
-# Copy only essential files
+# Copy all necessary files
 COPY hybrid_search_frontend.html /app/
-COPY run_server.py /app/
+COPY simple_server.py /app/
 
 # Set environment variables
-ENV PORT=3001
+ENV PORT=8080
 
 # Expose the port
-EXPOSE 3001
+EXPOSE 8080
 
-# Run the minimal server
-CMD ["python", "run_server.py"] 
+# Run the simple server
