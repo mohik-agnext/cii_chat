@@ -16,3 +16,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Run the simple server
+CMD ["gunicorn", "-k", "gevent", "-w", "1", "--bind", "0.0.0.0:8080", "simple_server:app"]
